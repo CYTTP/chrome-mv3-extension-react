@@ -1,21 +1,13 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "__MSG_extensionName__",
   "version": "0.1.0",
   "description": "__MSG_extensionDescription__",
   "default_locale": "zh_CN",
-  "action": {
+  "browser_action": {
     "default_title": "__MSG_extensionName__",
     "default_icon": "src/img/images.png",
     "default_popup": "src/popup/index.html"
-  },
-  "side_panel": {
-    "default_path": "src/popup/index.html",
-    "default_icon": {
-      "16": "src/img/images.png",
-      "48": "src/img/images.png",
-      "128": "src/img/images.png"
-    }
   },
   "icons": {
     "16": "src/img/images.png",
@@ -28,38 +20,31 @@
     "open_in_tab": true
   },
   "background": {
-    "service_worker": "src/background/service-worker.ts"
+    "scripts": ["src/background/background.js"],
+    "persistent": false
   },
   "permissions": [
     "activeTab",
     "storage",
-    "tabs",
-    "sidePanel",
-    "contextMenus"
+    "tabs"
   ],
   "host_permissions": ["http://*/*", "https://*/*"],
-  "commands": {
-    "translate-selection": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+T",
-        "mac": "Command+Shift+T"
-      },
-      "description": "翻译选中的文本"
-    }
-  },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["src/content/content.ts"],
+      "js": ["src/content/content.js"],
       "run_at": "document_idle",
       "all_frames": false
     }
   ],
   "web_accessible_resources": [
-    {
-      "resources": ["src/assets/*", "src/img/*"],
-      "matches": ["http://*/*", "https://*/*"],
-      "use_dynamic_url": true
+    "src/assets/*",
+    "src/img/*"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "firefox-mv3-extension-react@example.com",
+      "strict_min_version": "109.0"
     }
-  ]
+  }
 }

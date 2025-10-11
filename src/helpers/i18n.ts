@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-const browserLang = chrome.i18n.getUILanguage(); // 获取浏览器的语言
+const browserLang = (chrome as any).i18n?.getUILanguage() || 'en'; // 获取浏览器的语言
 const defaultLang = browserLang.startsWith('zh') ? 'zh' : 'en';
 
 i18n

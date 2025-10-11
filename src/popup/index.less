@@ -1,0 +1,202 @@
+// 划词翻译弹窗样式
+.translation-popup {
+  width: 320px;
+  padding: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  .popup-header {
+    margin-bottom: 8px;
+    
+    .ant-typography {
+      color: #1890ff;
+    }
+  }
+
+  .ant-card {
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    
+    .ant-card-head {
+      padding: 8px 12px;
+      min-height: auto;
+      
+      .ant-card-head-title {
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+    
+    .ant-card-body {
+      padding: 12px;
+    }
+  }
+
+  .ant-select {
+    .ant-select-selector {
+      border-radius: 4px;
+    }
+  }
+
+  .ant-slider {
+    margin: 8px 0 4px 0;
+    
+    .ant-slider-rail {
+      background-color: #f5f5f5;
+    }
+    
+    .ant-slider-track {
+      background-color: #1890ff;
+    }
+    
+    .ant-slider-handle {
+      border-color: #1890ff;
+      
+      &:hover, &:focus {
+        border-color: #40a9ff;
+        box-shadow: 0 0 0 5px rgba(24, 144, 255, 0.12);
+      }
+    }
+  }
+
+  .ant-switch {
+    &.ant-switch-checked {
+      background-color: #1890ff;
+    }
+  }
+
+  .ant-row {
+    margin-bottom: 8px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .ant-divider {
+    border-color: #f0f0f0;
+  }
+}
+
+// 全局翻译面板样式（注入到页面中）
+.word-translation-panel {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  
+  .translation-header {
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #f0f0f0;
+    
+    .original-text {
+      font-weight: 500;
+      color: #262626;
+      font-size: 13px;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+  }
+  
+  .translation-content {
+    .loading {
+      color: #1890ff;
+      font-size: 12px;
+      text-align: center;
+      padding: 4px 0;
+    }
+    
+    .translated-text {
+      color: #262626;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 6px;
+      word-break: break-word;
+
+      &.streaming {
+        .cursor {
+          animation: blink 1s infinite;
+          color: #1890ff;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .stream-status {
+      color: #1890ff;
+      font-size: 11px;
+      font-style: italic;
+      text-align: right;
+      margin-top: 4px;
+    }
+    
+    .pronunciation {
+      color: #8c8c8c;
+      font-size: 12px;
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+    
+    .language-info {
+      color: #8c8c8c;
+      font-size: 11px;
+      text-align: right;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid #f5f5f5;
+    }
+    
+    .error {
+      color: #ff4d4f;
+      font-size: 12px;
+      text-align: center;
+      padding: 4px 0;
+    }
+  }
+  
+  // 动画效果
+  &.fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+  
+  &.fade-out {
+    animation: fadeOut 0.2s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+// 响应式设计
+@media (max-width: 360px) {
+  .translation-popup {
+    width: 280px;
+    padding: 12px;
+  }
+}

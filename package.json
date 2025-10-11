@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:firefox": "vite --config vite.config.firefox.ts",
     "build": "tsc -b && vite build",
+    "build:firefox": "tsc -b && vite build --config vite.config.firefox.ts",
+    "build:all": "npm run build && npm run build:firefox",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -30,12 +33,14 @@
     "@typescript-eslint/parser": "^7.13.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "chrome-types": "^0.1.291",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "less": "^4.2.1",
     "terser": "^5.34.1",
     "typescript": "^5.2.2",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "webextension-polyfill": "^0.12.0"
   }
 }

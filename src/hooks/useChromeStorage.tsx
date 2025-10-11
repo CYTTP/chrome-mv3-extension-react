@@ -6,13 +6,13 @@ const useChromeStorage = (key: string) => {
     const [value, setValue] = useState<any>();
 
     useEffect(() => {
-        chrome.storage.local.get(key, result => {
+        (chrome as any).storage.local.get(key, (result: any) => {
             setValue(result[key]);
         });
     }, [key]);
 
     const setStorage = useCallback((newValue: any) => {
-        chrome.storage.local.set({ [key]: newValue });
+        (chrome as any).storage.local.set({ [key]: newValue });
     }, [key]);
 
     return [value, setStorage];
