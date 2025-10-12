@@ -52,6 +52,7 @@ interface MessageResponse {
   [key: string]: unknown;
 }
 import './index.less';
+import { BrowserAPI } from '../types/browser';
 
 const { Option } = Select;
 const { Title, Text } = Typography;
@@ -197,7 +198,7 @@ const Pop = () => {
     
     // 通知所有标签页
     try {
-      const api = browserAPI as unknown;
+      const api = browserAPI as BrowserAPI;
       if (typeof api?.tabs?.query === 'function') {
         const tabs = await api.tabs.query({});
         for (const tab of tabs) {
