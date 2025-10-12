@@ -17,6 +17,10 @@ export interface GLMRequest {
   messages: GLMMessage[];
   temperature?: number;
   stream?: boolean;
+  thinking:{
+    type: string;
+  },
+  max_tokens?: number;
 }
 
 export interface GLMStreamResponse {
@@ -62,7 +66,7 @@ export class GLMTranslationService {
     onProgress?: (chunk: string) => void
   ): Promise<GLMTranslationResult> {
     console.log(`[GLMService] 开始翻译 - 文本: "${text}", 源语言: ${sourceLang}, 目标语言: ${targetLang}`);
-    
+
     if (!this.apiKey) {
       console.error('[GLMService] API密钥未设置');
       throw new Error('GLM API密钥未设置');
@@ -79,15 +83,19 @@ export class GLMTranslationService {
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt }
       ],
-      temperature: 0.6,
-      stream: true
+      thinking: {
+        type: "enabled"
+      },
+      stream: true,
+      max_tokens: 4096,
+      temperature: 0.6
     };
 
     console.log('[GLMService] 请求体:', JSON.stringify(requestBody, null, 2));
 
     try {
       console.log(`[GLMService] 发送请求到: ${this.API_ENDPOINT}`);
-      
+
       const response = await fetch(this.API_ENDPOINT, {
         method: 'POST',
         headers: {
@@ -271,7 +279,11 @@ export class GLMTranslationService {
           { role: 'user', content: 'Hello' }
         ],
         temperature: 0.1,
-        stream: false
+        stream: false,
+        max_tokens: 1024,
+        thinking:{
+          type: 'none'
+        }
       };
 
       const response = await fetch(this.API_ENDPOINT, {
