@@ -1,8 +1,8 @@
 {
   "extensionName": {
-    "message": "划词翻译"
+    "message": "浏览器插件模板"
   },
   "extensionDescription": {
-    "message": "网页划词翻译插件，选中文本即可快速翻译"
+    "message": "开箱即用的浏览器插件开发模板，支持Chrome和Firefox"
   }
 }

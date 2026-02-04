@@ -1,8 +1,8 @@
 {
   "extensionName": {
-    "message": "Word Translation"
+    "message": "Browser Extension Template"
   },
   "extensionDescription": {
-    "message": "Web page word translation extension, select text to translate quickly"
+    "message": "Ready-to-use browser extension template for Chrome and Firefox"
   }
 }

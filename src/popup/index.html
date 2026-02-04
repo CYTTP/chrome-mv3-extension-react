@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>popup</title>
+    <title>Browser Extension</title>
     <style>
         html {
             scrollbar-width: none;
@@ -14,22 +13,21 @@
             display: none;
         }
 
-        .popup {
+        body {
             width: 100%;
-            background-color: rgb(240, 240, 240);
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
         }
-        #root{
-            height: 300px;
-            width: 300px;
+        
+        #root {
+            min-height: 400px;
+            width: 360px;
         }
     </style>
 </head>
-
-<body class="popup">
+<body>
     <div id="root"></div>
     <script type="module" src="./main.tsx"></script>
 </body>
-
 </html>

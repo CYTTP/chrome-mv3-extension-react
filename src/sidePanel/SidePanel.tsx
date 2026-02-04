@@ -1,15 +1,16 @@
-import React from 'react';
-import './index.less'
 
-const SidePanel: React.FC = () => {
+import './index.less';
 
 
-    return (
-        <>SidePanel</>
 
-    );
+const SidePanel = () => {
+
+
+  return (
+    <div className="sidepanel-container">
+
+    </div>
+  );
 };
 
 export default SidePanel;
-
-

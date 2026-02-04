@@ -1,11 +1,12 @@
 
-import './options.less';
-
 
 const Options = () => {
 
-
-  return <> </>
+  return (
+    <div className="options-container">
+   
+    </div>
+  );
 };
 
 export default Options;
