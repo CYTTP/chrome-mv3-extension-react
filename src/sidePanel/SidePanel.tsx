@@ -1,6 +1,4 @@
 
-import './index.less';
-
 
 
 const SidePanel = () => {
