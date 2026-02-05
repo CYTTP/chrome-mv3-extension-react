@@ -9,5 +9,5 @@
     "strict": true,
     "noEmit": true
   },
-  "include": ["vite.config.ts","manifest.json","manifest.firefox.json"]
+  "include": ["vite.config.ts", "manifest.config.ts"]
 }

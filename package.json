@@ -17,9 +17,9 @@
   ],
   "scripts": {
     "dev": "vite",
-    "dev:firefox": "vite --config vite.config.firefox.ts",
+    "dev:firefox": "cross-env VITE_BROWSER=firefox vite",
     "build": "tsc -b && vite build",
-    "build:firefox": "tsc -b && vite build --config vite.config.firefox.ts",
+    "build:firefox": "cross-env VITE_BROWSER=firefox tsc -b && cross-env VITE_BROWSER=firefox vite build",
     "build:all": "npm run build && npm run build:firefox",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -55,6 +55,7 @@
     "terser": "^5.34.1",
     "typescript": "^5.2.2",
     "vite": "^5.3.1",
+    "vite-plugin-zip-pack": "^1.2.4",
     "webextension-polyfill": "^0.12.0"
   }
 }
