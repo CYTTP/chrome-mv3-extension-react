@@ -1,5 +1,5 @@
 {
-  "name": "browser-extension",
+  "name": "chrome-mv3-extension-react",
   "private": false,
   "version": "1.0.0",
   "description": "开箱即用的 Chrome 插件开发模板，支持 Chrome MV3",
