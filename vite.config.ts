@@ -31,6 +31,9 @@ export default defineConfig(({ mode }) => {
         '@': '/src',
       },
     },
+    css: {
+      postcss: './postcss.config.js',
+    },
     build: {
       outDir: 'dist',
       minify: isDev ? false : 'terser',

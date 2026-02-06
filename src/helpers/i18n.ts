@@ -17,13 +17,15 @@ i18n
             en: {
                 translation: {
                     click_me: "click me",
-                    dec: "Hello!"
+                    dec: "Hello!",
+                    hello: "Hello"
                 }
             },
             zh: {
                 translation: {
                     click_me: "点击我",
-                    dec: "嗨！"
+                    dec: "嗨！",
+                    hello: "你好"
                 }
             }
         }
