@@ -29,7 +29,9 @@ chrome-mv3-extension-react/
 │   │   └── content.ts
 │   ├── devtools/            # 开发者工具面板
 │   │   ├── index.html
-│   │   └── index.ts
+│   │   ├── panel.html
+│   │   ├── panel.tsx
+│   │   └── devtools.ts
 │   ├── helpers/             # 工具函数
 │   │   └── i18n.ts          # 国际化配置
 │   ├── hooks/               # React Hooks
@@ -109,10 +111,7 @@ pnpm build
 | Content Script | ✅ |
 | Side Panel | ✅ |
 | DevTools | ✅ |
-| Storage API | ✅ |
-| Tabs API | ✅ |
 | 国际化 (i18n) | ✅ |
-| Tailwind CSS | ✅ |
 
 ### 📄 许可证
 
